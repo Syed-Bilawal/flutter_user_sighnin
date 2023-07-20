@@ -38,12 +38,12 @@ class _HomeScreenState extends State<HomeScreen> {
               items:  imgList
             .map((item) => Container(
               child: Container(
-                margin: EdgeInsets.all(5.0),
+                margin: EdgeInsets.only(bottom: 8),
                 child: ClipRRect(
                     borderRadius: BorderRadius.all(Radius.circular(15.0)),
                     child: Stack(
                       children: <Widget>[
-                        Image.network(item, fit: BoxFit.cover, width: 400.0),
+                        Image.network(item, fit: BoxFit.contain, width: 400.0),
                        
                       ],
                     )),

@@ -13,9 +13,9 @@ class UserController extends GetxController {
    String? str;
   void signIn() {
     
-    if (formKey.currentState!.validate()) {
-    if (str == null) {
-    }
+    // if (formKey.currentState!.validate()) {
+    // if (str == null) {
+    // }
     print("Valid");
     Get.snackbar('Success', 'User Logged In Successfully');
     Get.to(
@@ -24,10 +24,10 @@ class UserController extends GetxController {
         () => HomeScreen(
               email: emailC.text,
             ));
-    } else {
-    Get.snackbar('Failed', 'Something went wrong',
-        backgroundColor: Colors.red);
-    }
+    // } else {
+    // Get.snackbar('Failed', 'Something went wrong',
+    //     backgroundColor: Colors.red);
+    // }
   }
 
   // navTo(page) {

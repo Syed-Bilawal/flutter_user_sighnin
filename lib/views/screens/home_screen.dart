@@ -57,14 +57,26 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           //SizedBox(height: 10,),
-          Expanded(child: ListView.builder(scrollDirection: Axis.horizontal, itemCount:  imgList.length, itemBuilder: (context, index) {
+          Expanded(child: ListView.builder(scrollDirection: Axis.horizontal,
+           itemCount:  imgList.length, itemBuilder: (context, index) {
             return Container(
               padding: EdgeInsets.all(8),
               child:SizedBox( height: 500,
               child : 
               Image.network(imgList[index]),
-            ));
-          },))
+            )
+            );
+          },
+          )),
+          Expanded(child: GridView.builder(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+           itemCount: imgList.length, itemBuilder: (context, index) {
+             return Container( 
+              padding: EdgeInsets.all(8), 
+              child: Image.network(imgList[index], fit: BoxFit.cover,)
+              
+             );
+             
+           },))
         ],
       )
       

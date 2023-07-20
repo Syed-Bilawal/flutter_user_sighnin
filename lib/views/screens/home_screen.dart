@@ -43,7 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     borderRadius: BorderRadius.all(Radius.circular(15.0)),
                     child: Stack(
                       children: <Widget>[
-                        Image.network(item, fit: BoxFit.cover, width: 500.0),
+                        Image.network(item, fit: BoxFit.cover, width: 400.0),
                        
                       ],
                     )),
@@ -68,7 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   
                      Column(
                        children: [
-                         Image.network(imgList[index]), Text('this')
+                         Image.network(imgList[index]), Text('this is list view')
                        ],
                      ) , width: 200,  ), 
                 
@@ -86,7 +86,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: 
                 Column(
                   children: [
-                    Image.network(imgList[index], fit: BoxFit.cover,), Text('this is ')
+                    Image.network(imgList[index], fit: BoxFit.cover,), Text('this is grid view ')
                   ],
                 ))
               

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
+import 'package:my_test_app/views/screens/home_screen.dart';
 import 'package:my_test_app/views/screens/signin_screen.dart';
 
 void main() {
@@ -29,7 +30,8 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: SignInScreen(),
+      // home: SignInScreen(),
+      home: HomeScreen(email: 'email'),
     );
   }
 }

@@ -25,55 +25,56 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(centerTitle: true, title: Text('home screen'),),
       body: Column(
         children: [
-          Expanded(
-            child: Container
-            ( child : CarouselSlider(
-              options: CarouselOptions(
-                autoPlay: true,
-                aspectRatio: 2.0,
-                viewportFraction: 0.5,
-                enlargeCenterPage: true,
-                
-              ),
-              items:  imgList
-            .map((item) => Container(
-              child: Container(
-                margin: EdgeInsets.only(bottom: 8),
-                child: ClipRRect(
-                    borderRadius: BorderRadius.all(Radius.circular(15.0)),
-                    child: Stack(
-                      children: <Widget>[
-                        Image.network(item, fit: BoxFit.contain, width: 400.0),
-                       
-                      ],
-                    )),
-              ),
-            ))
-            .toList(),
-            )
-              
-              
-            
+          Container
+          ( child : CarouselSlider(
+            options: CarouselOptions(
+              autoPlay: true,
+              aspectRatio: 14/9,
+              viewportFraction: 0.8,
+              enlargeCenterPage: true,
+              height: 130
             ),
+            items:  imgList
+          .map((item) => Container(
+            child: Container(
+              margin: EdgeInsets.only(bottom: 8),
+              child: ClipRRect(
+                  borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                  child: SizedBox(
+                    // width: MediaQuery.of(context).size.width/1.4,
+                    width: 800,
+                    child: Image.network(item, fit: BoxFit.cover, ))),
+            ),
+          ))
+          .toList(),
+          )
+            
+            
+          
           ),
           SizedBox(height: 10,),
-          Expanded(child: ListView.builder(scrollDirection: Axis.horizontal,
+          SizedBox(
+            height: 100, width: 500,
+            child: ListView.builder(scrollDirection: Axis.horizontal,
            itemCount:  imgList.length, itemBuilder: (context, index) {
             return Container(
               padding: EdgeInsets.all(8),
-              child:SizedBox( height: 500,
-              child : 
-              
-                
-                  
-                     Column(
-                       children: [
-                         Image.network(imgList[index]), Text('this is list view')
-                       ],
-                     ) , width: 200,  ), 
-                
-              
-            
+              child:SizedBox( height: 90,
+                child: Card(      
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20))),      
+                         child: SizedBox(height: 90,
+                           child: Column( 
+                             children: [ 
+                               ClipRRect(
+                                 borderRadius: BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20)),
+                                 child: Image.network(imgList[index],fit: BoxFit.cover, width: 130, height: 55,  )), 
+                                 Padding(padding: EdgeInsets.all(2)),
+                               Text('this is list view')
+                             ],
+                           ),
+                         ),
+                       ),
+              ),          
             );
           },
           )),
@@ -81,14 +82,18 @@ class _HomeScreenState extends State<HomeScreen> {
            itemCount: imgList.length, itemBuilder: (context, index) {
              return Container( 
              padding: EdgeInsets.all(8),decoration: BoxDecoration(), 
-              child: Container( 
-                
-                child: 
-                Column(
-                  children: [
-                    Image.network(imgList[index], fit: BoxFit.cover,), Text('this is grid view ')
-                  ],
-                ))
+              child: SizedBox( height: 100,width: 200, 
+                child: Card(
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
+                  child: Column( 
+                    children: [ 
+                      ClipRRect(
+                        borderRadius:  BorderRadius.only(topLeft: Radius.circular(20) , topRight: Radius.circular(20)  ),
+                        child: Image.network(imgList[index], fit: BoxFit.cover, height: 120, width: 200,)), Text('this is grid view ')
+                    ],
+                  ),
+                ),
+              )
               
              );
              

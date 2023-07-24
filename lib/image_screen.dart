@@ -82,46 +82,53 @@ class TheDescriptionPage extends StatelessWidget {
                   children: [ 
                     Center(
                       
-                      child: Text( 
-                        store.name,
-                        style: TextStyle(fontSize: 35, fontStyle: FontStyle.italic ),
+                      child: Align(
+                        alignment: Alignment.topLeft,
+                        child: Text( 
+                          store.name,
+                          style: TextStyle(fontSize: 35,),
+                        ),
                       ),
                     ),
                     Text(
                       'Description:',
                       style: TextStyle(
                         fontSize: 25, fontFamily: "Ganos" , 
-                        fontStyle: FontStyle.italic , fontWeight: FontWeight.bold
+                         fontWeight: FontWeight.bold
                       ),
                     ),
                     
                     Text(store.ourDescription.toString(), textAlign: TextAlign.justify , 
-                    style: TextStyle(fontStyle: FontStyle.italic , fontFamily: "Ganos", fontSize: 20), )
+                    style: TextStyle(fontFamily: "Ganos", fontSize: 20),)
                   ],
                 )
                 ),
-                Container(
-                  child: Row(
-                   
-                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [  
-                      OutlinedButton(onPressed: () { 
-                        
-                      },  child:  Text('Add to Cart', style: TextStyle(fontSize: 20 ), ) ),
-                    
-                    ElevatedButton(onPressed: () {
-                      
-                    }, child: Text('Buy now'))
-                    
-                    ],
-                  ),
-                )
+               
           ], 
           
              
              
              ),
        ),
+    bottomNavigationBar: Container(
+      height: 50,
+      child: Row( mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Expanded(flex: 2,
+            child:OutlinedButton(onPressed: () {
+              
+            }, child: Text('Add to card')) ),
+            Expanded(
+              flex: 1,
+              child: ElevatedButton(onPressed: () {
+                
+              }, child: Text('Buy Now')
+              )
+              )
+        
+        ],
+      ),
+    ),
     );
   }
 }

@@ -51,7 +51,7 @@ class TheDescriptionPage extends StatelessWidget {
     return Scaffold(
       body: Column(
         
-        crossAxisAlignment: CrossAxisAlignment.start,
+       // crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           
           Container(
@@ -86,11 +86,12 @@ class TheDescriptionPage extends StatelessWidget {
                   Text(
                     'Description:',
                     style: TextStyle(
-                      fontSize: 25,
+                      fontSize: 25, fontFamily: "Ganos" , fontStyle: FontStyle.italic , fontWeight: FontWeight.bold
                     ),
                   ),
                   
-                  Text(store.ourDescription.toString(), textAlign: TextAlign.justify , )
+                  Text(store.ourDescription.toString(), textAlign: TextAlign.justify , 
+                  style: TextStyle(fontStyle: FontStyle.italic , fontFamily: "Ganos", fontSize: 10), )
                 ],
               )
               ),
@@ -101,7 +102,7 @@ class TheDescriptionPage extends StatelessWidget {
                   children: [  
                     OutlinedButton(onPressed: () {
                       
-                    },  child:  Text('Add to Cart') ),
+                    },  child:  Text('Add to Cart', style: TextStyle(fontSize: 20),) ),
                   
                   ElevatedButton(onPressed: () {
                     

@@ -53,28 +53,32 @@ class TheDescriptionPage extends StatelessWidget {
         
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Align(alignment: Alignment.center,),
+          
           Container(
             margin: EdgeInsets.only(left: 20),
             child: SizedBox(
               height: 200,
               width: 200,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: Image.network(
-                  store.urlImage,
-                  fit: BoxFit.cover,
+              child: Container( alignment: Alignment.center,
+                child: ClipRRect( 
+                  borderRadius: BorderRadius.circular(20),
+                  child: Image.network(alignment: Alignment.center,
+                    store.urlImage,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),
           ),
           Container(
+            padding: EdgeInsets.all(20),
               margin: EdgeInsets.only(top: 20),
-              child: Column(
+              child: Column( 
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+                children: [ 
                   Center(
-                    child: Text(
+                    
+                    child: Text( 
                       store.name,
                       style: TextStyle(fontSize: 35),
                     ),
@@ -85,10 +89,31 @@ class TheDescriptionPage extends StatelessWidget {
                       fontSize: 25,
                     ),
                   ),
-                  Text(store.ourDescription.toString())
+                  
+                  Text(store.ourDescription.toString(), textAlign: TextAlign.justify , )
                 ],
-              ))
-        ],
+              )
+              ),
+              Container(
+                child: Row(
+                 
+                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [  
+                    OutlinedButton(onPressed: () {
+                      
+                    },  child:  Text('Add to Cart') ),
+                  
+                  ElevatedButton(onPressed: () {
+                    
+                  }, child: Text('Buy now'))
+                  
+                  ],
+                ),
+              )
+        ], 
+        
+      
+      
       ),
     );
   }

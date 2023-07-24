@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:get/get.dart';
 import 'package:my_test_app/image_screen.dart';
+import 'package:my_test_app/main.dart';
 
 import '../../controllers/home_controller.dart';
 import '../../models/product.dart';
@@ -97,7 +98,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         }  ,
                                  )), 
                                  Padding(padding: EdgeInsets.all(2)),
-                               Text('this is list view')
+                               Text(myObject.name),
+                               
                              ],
                            ),
                          ),
@@ -108,7 +110,7 @@ class _HomeScreenState extends State<HomeScreen> {
           )),
           Text('  New Arival', style: TextStyle(color: Colors.blueGrey,fontSize: 20 , fontWeight: FontWeight.bold),),
           Expanded(child: GridView.builder(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3), 
-           itemCount: imgList.length, itemBuilder: (context, i) {
+           itemCount: b.myStore.length, itemBuilder: (context, i) {
              return Container( 
              padding: EdgeInsets.all(8),decoration: BoxDecoration(), 
               child: SizedBox( height: 100,width: 200, 
@@ -125,7 +127,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           Navigator.push<Widget>(context, MaterialPageRoute(builder: (context) => TheDescriptionPage(b.myStore[i])));
                         },
                         )),
-                         Text('this is grid view ')
+                         Text(b.myStore[i].name)
                     ],
                   ),
                 ),

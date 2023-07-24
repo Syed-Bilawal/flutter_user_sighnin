@@ -49,73 +49,79 @@ class TheDescriptionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        
-       // crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
+
+      appBar: AppBar(title: Text('Discription Page'),),
+      body: 
+       SafeArea(
+         child: Column(
           
-          Container(
-            margin: EdgeInsets.only(left: 20),
-            child: SizedBox(
-              height: 200,
-              width: 200,
-              child: Container( alignment: Alignment.center,
-                child: ClipRRect( 
-                  borderRadius: BorderRadius.circular(20),
-                  child: Image.network(alignment: Alignment.center,
-                    store.urlImage,
-                    fit: BoxFit.cover,
+         // crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            
+            Container(
+              margin: EdgeInsets.only(left: 20),
+              child: SizedBox(
+                height: 200,
+                width: 200,
+                child: Container( alignment: Alignment.center,
+                  child: ClipRRect( 
+                    borderRadius: BorderRadius.circular(20),
+                    
+                    child: Card (
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
+                      child: Image.network(store.urlImage,fit: BoxFit.cover, height: 1000)),
                   ),
                 ),
               ),
             ),
-          ),
-          Container(
-            padding: EdgeInsets.all(20),
-              margin: EdgeInsets.only(top: 20),
-              child: Column( 
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [ 
-                  Center(
-                    
-                    child: Text( 
-                      store.name,
-                      style: TextStyle(fontSize: 35),
-                    ),
-                  ),
-                  Text(
-                    'Description:',
-                    style: TextStyle(
-                      fontSize: 25, fontFamily: "Ganos" , fontStyle: FontStyle.italic , fontWeight: FontWeight.bold
-                    ),
-                  ),
-                  
-                  Text(store.ourDescription.toString(), textAlign: TextAlign.justify , 
-                  style: TextStyle(fontStyle: FontStyle.italic , fontFamily: "Ganos", fontSize: 10), )
-                ],
-              )
-              ),
-              Container(
-                child: Row(
-                 
-                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [  
-                    OutlinedButton(onPressed: () {
+            Container(
+              padding: EdgeInsets.all(20),
+                margin: EdgeInsets.only(top: 20),
+                child: Column( 
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [ 
+                    Center(
                       
-                    },  child:  Text('Add to Cart', style: TextStyle(fontSize: 20),) ),
-                  
-                  ElevatedButton(onPressed: () {
+                      child: Text( 
+                        store.name,
+                        style: TextStyle(fontSize: 35, fontStyle: FontStyle.italic ),
+                      ),
+                    ),
+                    Text(
+                      'Description:',
+                      style: TextStyle(
+                        fontSize: 25, fontFamily: "Ganos" , 
+                        fontStyle: FontStyle.italic , fontWeight: FontWeight.bold
+                      ),
+                    ),
                     
-                  }, child: Text('Buy now'))
-                  
+                    Text(store.ourDescription.toString(), textAlign: TextAlign.justify , 
+                    style: TextStyle(fontStyle: FontStyle.italic , fontFamily: "Ganos", fontSize: 20), )
                   ],
+                )
                 ),
-              )
-        ], 
-        
-      
-      
-      ),
+                Container(
+                  child: Row(
+                   
+                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [  
+                      OutlinedButton(onPressed: () { 
+                        
+                      },  child:  Text('Add to Cart', style: TextStyle(fontSize: 20 ), ) ),
+                    
+                    ElevatedButton(onPressed: () {
+                      
+                    }, child: Text('Buy now'))
+                    
+                    ],
+                  ),
+                )
+          ], 
+          
+             
+             
+             ),
+       ),
     );
   }
 }

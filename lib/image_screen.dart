@@ -57,7 +57,7 @@ class TheDescriptionPage extends StatelessWidget {
                       Text(store.price),
                          ),
                     Text(
-                      'Description:',
+                      'Description:', softWrap: true,
                       style: TextStyle(
                         fontSize: 25, fontFamily: "Ganos" , 
                          fontWeight: FontWeight.bold

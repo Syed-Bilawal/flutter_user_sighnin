@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
+
 import 'package:get/get.dart';
 import '../models/product.dart';
-import '../models/user.dart';
+
 
 class HomeController extends GetxController {
   List<productItems> myStore = [

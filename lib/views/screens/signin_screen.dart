@@ -20,7 +20,7 @@ class SignInScreen extends StatefulWidget {
 
 class _SignInScreenState extends State<SignInScreen> {
   final c = Get.put(UserController());
-
+Sinup? u;
  @override
  void initState() {
    super.initState();
@@ -30,19 +30,19 @@ class _SignInScreenState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
     // c.formKey.currentState!.validate();
-    return Scaffold(drawer: Drawer( child: Column(
-      children: [ 
-        
-        Row( mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text('Wanna see Save Info? click on Icon'),
-             IconButton(icon: Icon(Icons.person), onPressed: () { 
-        },),
-          ],
-        ),
-       
-      ],
-    ) ),
+    return Scaffold(drawer: Drawer(
+      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+       child: ListView( padding: EdgeInsets.all(8), 
+         children: [ ListTile(title: Text('Save info', style: TextStyle(fontSize: 20),)  , 
+         onTap: () {
+           Get.to(() => Person());
+
+           
+         },
+         ),
+          
+         ],
+       ) ),
       appBar: AppBar(title: Text('welcome to login screen' , style: TextStyle(color: Colors.white),),),
       // resizeToAvoidBottomInset: false,
       body: SafeArea(

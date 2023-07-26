@@ -14,67 +14,69 @@ class TheDescriptionPage extends StatelessWidget {
       appBar: AppBar(title: Text('Discription Page'),),
       body: 
        SafeArea(
-         child: Column(
-          
-         // crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+         child: SingleChildScrollView(
+           child: Column(
             
-            Container(
-              margin: EdgeInsets.only(left: 20),
-              child: SizedBox(
-                height: 200,
-                width: 200,
-                child: Container( alignment: Alignment.center,
-                  child: ClipRRect( 
-                    borderRadius: BorderRadius.circular(20),
-                    
-                    child: Card (
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
-                      child: Image.network(store.urlImage,fit: BoxFit.cover, height: 1000)),
+           // crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              
+              Container(
+                margin: EdgeInsets.only(left: 20),
+                child: SizedBox(
+                  height: 200,
+                  width: 200,
+                  child: Container( alignment: Alignment.center,
+                    child: ClipRRect( 
+                      borderRadius: BorderRadius.circular(20),
+                      
+                      child: Card (
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
+                        child: Image.network(store.urlImage,fit: BoxFit.cover, height: 1000)),
+                    ),
                   ),
                 ),
               ),
-            ),
-            Container(
-              padding: EdgeInsets.all(20),
-                margin: EdgeInsets.only(top: 20),
-                child: Column( 
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [ 
-                    Center(
-                      child: Align(
-                        alignment: Alignment.topLeft,
-                        child: Text( 
-                          store.name,
-                          style: TextStyle(fontSize: 35,),
+              Container(
+                padding: EdgeInsets.all(20),
+                  margin: EdgeInsets.only(top: 20),
+                  child: Column( 
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [ 
+                      Center(
+                        child: Align(
+                          alignment: Alignment.topLeft,
+                          child: Text( 
+                            store.name,
+                            style: TextStyle(fontSize: 35,),
+                          ),
+                        
                         ),
-                      
+                        
+                      ),
+                      Container(
+                        child:
+                        Text(store.price),
+                           ),
+                      Text(
+                        'Description:', softWrap: true,
+                        style: TextStyle(
+                          fontSize: 25, fontFamily: "Ganos" , 
+                           fontWeight: FontWeight.bold
+                        ),
                       ),
                       
-                    ),
-                    Container(
-                      child:
-                      Text(store.price),
-                         ),
-                    Text(
-                      'Description:', softWrap: true,
-                      style: TextStyle(
-                        fontSize: 25, fontFamily: "Ganos" , 
-                         fontWeight: FontWeight.bold
-                      ),
-                    ),
-                    
-                    Text(store.ourDescription.toString(), textAlign: TextAlign.justify , 
-                    style: TextStyle(fontFamily: "Ganos", fontSize: 20),)
-                  ],
-                )
-                ),
+                      Text(store.ourDescription.toString(), textAlign: TextAlign.justify , 
+                      style: TextStyle(fontFamily: "Ganos", fontSize: 20),)
+                    ],
+                  )
+                  ),
+                 
+            ], 
+            
                
-          ], 
-          
-             
-             
-             ),
+               
+               ),
+         ),
        ),
     bottomNavigationBar: Container(
       height: 50,

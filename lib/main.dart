@@ -36,8 +36,8 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home  : SplashScreen(),
-      // home: SignInScreen(),
+     // home  : SplashScreen(),
+      home: SignInScreen(),
       //home: HomeScreen(email: 'email'),
     );
   }

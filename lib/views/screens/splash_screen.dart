@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
+import 'package:my_test_app/views/screens/person.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../main.dart';
@@ -26,7 +27,11 @@ class _SplashScreenState extends State<SplashScreen> {
   }
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(actions: [ IconButton(onPressed: () {
+        Get.to(()=> Person());
+      }, icon: Icon(Icons.person))]),
+    );
   }
   
   void myInit() async{

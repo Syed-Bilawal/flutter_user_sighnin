@@ -3,6 +3,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:get/get.dart';
 import 'package:my_test_app/image_screen.dart';
 import 'package:my_test_app/main.dart';
+import 'package:my_test_app/views/screens/person.dart';
 
 import '../../controllers/home_controller.dart';
 import '../../models/product.dart';
@@ -21,7 +22,13 @@ class _HomeScreenState extends State<HomeScreen> {
    
 
     return Scaffold( 
-      appBar: AppBar(centerTitle: true, title: Text('home screen'),),
+      appBar: AppBar(centerTitle: true, title: Text('home screen'),
+      actions: [
+        IconButton(onPressed: () {
+          Get.to(()=>  Person());
+        }, icon: Icon(Icons.person))
+      ],
+      ),
       
       body: Column(   crossAxisAlignment: CrossAxisAlignment.start,
         children: [

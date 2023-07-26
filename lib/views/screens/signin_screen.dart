@@ -30,14 +30,20 @@ class _SignInScreenState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
     // c.formKey.currentState!.validate();
-    return Scaffold(
-      appBar: AppBar(title: Text('welcome to login screen' , style: TextStyle(color: Colors.white),),
-      actions: [ 
-        IconButton(onPressed: () {
-          Get.to(()=>  Person());
-        }, icon: Icon(Icons.person))
+    return Scaffold(drawer: Drawer( child: Column(
+      children: [ 
+        
+        Row( mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text('Wanna see Save Info? click on Icon'),
+             IconButton(icon: Icon(Icons.person), onPressed: () { 
+        },),
+          ],
+        ),
+       
       ],
-       ),
+    ) ),
+      appBar: AppBar(title: Text('welcome to login screen' , style: TextStyle(color: Colors.white),),),
       // resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Padding(
